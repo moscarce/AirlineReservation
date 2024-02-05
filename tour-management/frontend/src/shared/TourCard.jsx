@@ -1,14 +1,13 @@
 import React from 'react';
 import {Card, CardBody} from 'reactstrap';
 import {Link} from 'react-router-dom';
-import './tour-card.css'
+import './tour-card.css';
+import calculateAvgRating from '../utils/avgRating';
 
 const TourCard = ({tour}) => {
     const { id, title, photo, price, featured, reviews, city} = tour;
 
-    const totalRating = reviews?.reduce((acc,item)=>acc + item.rating, 0)
-
-    const avgRating = totalRating === 0? '' : totalRating === 1?totalRating : (totalRating/ reviews?.length).toFixed(1);
+    const {totalRating, avgRating} = calculateAvgRating(reviews);
 
   return (
     <div className="tour__card">

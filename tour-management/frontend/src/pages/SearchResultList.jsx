@@ -1,8 +1,10 @@
 import React from 'react'
+import CommonSection from '../shared/CommonSection'
+
 
 const SearchResultList = () => {
   return (
-    <div>SearchResultList</div>
+    <CommonSection title={'Tour search Result'} />
   )
 }
 
